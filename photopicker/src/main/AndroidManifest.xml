@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.jovision.xunwei.lib.photopicker">
+
+    <!-- Include following permission if you load images from Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Include following permission if you want to cache images on SD card -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true">
+        <activity
+            android:name="com.photoselector.ui.PhotoSelectorActivity"
+            android:label="图片选择" >
+        </activity>
+        <activity
+            android:name="com.photoselector.ui.PhotoPreviewActivity"
+            android:label="图片预览" >
+        </activity>
+        <!--<activity-->
+            <!--android:name="com.photoselector.ui.PhotoSelectorPreview"-->
+            <!--android:label="点击图片" >-->
+        <!--</activity>-->
+        <activity
+            android:name="com.photoselector.ui.AlbumSelectorActivity"
+            android:label="相册选择" >
+        </activity>
+    </application>
+
+
+</manifest>

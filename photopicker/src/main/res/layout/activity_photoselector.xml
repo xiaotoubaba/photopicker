@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black" >
+
+    <RelativeLayout
+        android:id="@+id/hl_head_ar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_title_heigh"
+        android:layout_alignParentTop="true"
+        android:background="@color/bg" >
+
+        <!-- 跳转到相册按钮 -->
+
+        <LinearLayout
+            android:id="@+id/ll_back_album"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_title_content_heigh"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/topbar_back_bt" />
+
+            <TextView
+                android:id="@+id/tv_title_vb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textColor="#FEFEFE"
+                android:textSize="@dimen/layout_title_mini_textsize"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- 中间标题按钮 -->
+
+        <TextView
+            android:id="@+id/tv_title_lh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:text="@string/select_photos"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <!-- 右侧按钮 -->
+
+        <LinearLayout
+            android:id="@+id/ll_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@color/bg"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
+                android:paddingTop="5dp"
+                android:text="@string/clear"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/layout_title_middle_textsize" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_toolbar_ar"
+        android:layout_below="@+id/hl_head_ar"
+        android:background="#ffffff" >
+
+        <!-- 照片显示 -->
+
+        <GridView
+            android:id="@+id/gv_photos_ar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:clipToPadding="true"
+            android:horizontalSpacing="@dimen/sticky_item_horizontalSpacing"
+            android:listSelector="@null"
+            android:numColumns="3"
+            android:paddingTop="5dp"
+            android:scrollbars="@null"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/sticky_item_verticalSpacing" />
+    </RelativeLayout>
+
+    <!-- 底部工具栏 -->
+
+    <RelativeLayout
+        android:id="@+id/layout_toolbar_ar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/collection_photo_toolbar_height"
+        android:layout_alignParentBottom="true"
+        android:background="#bebebe" >
+
+        <!-- 预览 -->
+
+        <LinearLayout
+            android:id="@+id/ll_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:enabled="false"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_preview_ar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="0dp"
+                android:paddingTop="5dp"
+                android:text="@string/preview"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/layout_title_middle_textsize" />
+        </LinearLayout>
+
+        <!-- 确认 -->
+
+        <LinearLayout
+            android:id="@+id/ll_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <!-- 选中的图片数量 -->
+
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/selected_photo_number_bg"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/btn_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
+                android:paddingTop="5dp"
+                android:text="@string/sure"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/layout_title_middle_textsize" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

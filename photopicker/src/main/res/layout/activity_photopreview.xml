@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_base_app"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/layout_top_app"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_title_heigh"
+        android:layout_alignParentTop="true"
+        android:background="@color/halftransparent" >
+
+        <!-- 返回按钮 -->
+
+        <LinearLayout
+            android:id="@+id/bv_back_app"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_title_content_heigh"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/topbar_back_bt" />
+
+            <TextView
+                android:id="@+id/tv_title_vb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textColor="#FEFEFE"
+                android:textSize="@dimen/layout_title_mini_textsize"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- 中间标题按钮 -->
+
+        <TextView
+            android:id="@+id/tv_percent_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:text="@string/select_photos"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <!-- 右侧按钮 -->
+
+        <LinearLayout
+            android:id="@+id/ll_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <!-- 选择按钮 -->
+
+            <CheckBox
+                android:id="@+id/cb_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_checkbox_selector"
+                android:button="@null"
+                android:visibility="gone" />
+            <!-- 删除按钮 -->
+
+            <ImageView
+                android:id="@+id/iv_del"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_title_content_heigh"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/topbar_back_bt"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom_app"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_title_heigh"
+        android:layout_alignParentBottom="true"
+        android:background="@color/halftransparent" >
+
+        <!-- 确认 -->
+
+        <LinearLayout
+            android:id="@+id/ll_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <!-- 选中的图片数量 -->
+
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/selected_photo_number_bg"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/btn_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="0dp"
+                android:paddingTop="5dp"
+                android:text="@string/sure"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/layout_title_middle_textsize" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
